@@ -22,7 +22,7 @@ int main(int argc, char **argv) {
     cv::Mat image_undistort = cv::Mat(rows, cols, CV_8UC1);   // 去畸变以后的图
 
     // 计算去畸变后图像的内容
-    for (int v = 0; v < rows; v++)
+    for (int v = 0; v < rows; v++) {
         for (int u = 0; u < cols; u++) {
 
             double u_distorted = 0, v_distorted = 0;
@@ -52,6 +52,7 @@ int main(int argc, char **argv) {
                 image_undistort.at<uchar>(v, u) = 0;
             }
         }
+    }
 
     // 画图去畸变后图像
     cv::imshow("image undistorted", image_undistort);
